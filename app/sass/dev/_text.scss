@@ -1,0 +1,65 @@
+%vtitle-default{
+	margin-top: 10px;
+	margin-bottom: 15px;
+	line-height: 1.2;
+	font-weight: normal;
+}
+.vtitle{
+	text-transform: uppercase;
+	font-size: 24px;
+	@include fs('vtitle');
+	@extend %vtitle-default;
+	&-small{
+		font-size: 20px;
+		@include fs('vtitle-small');
+		@extend %vtitle-default;
+	}
+	&-big{
+		font-size: 30px;
+		@include fs('vtitle-big');
+		@extend .bold !optional;
+		@extend %vtitle-default;
+	}
+}
+.text{
+	&-uppercase{
+		text-transform: uppercase;
+	}
+	&-u{
+		text-decoration: underline;
+	}
+	&-dn{
+		text-decoration: none;
+	}
+	&-center{
+	 text-align: center;
+	}
+	&-left{
+	 text-align: left;
+	}
+	&-right{
+	 text-align: right;
+	}
+}
+.offset{
+	&-static{
+		&-xs{
+			margin-bottom: 15px;
+		}
+		&-sm{
+			margin-bottom: 30px;
+		}
+		&-md{
+			margin-bottom: 45px;
+		}
+	}
+	&-big,
+	&-extra{
+		margin-bottom: 60px;
+	}
+	@include resp-min(sm){
+		&-extra{
+			margin-bottom: 90px;
+		}
+	}
+}

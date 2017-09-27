@@ -1,0 +1,56 @@
+doctype html
+html(lang="ru")
+	head
+		include helpers/mixins
+		include helpers/data
+		include bem/index
+		
+		block variables
+
+		+add-meta('title', title)
+		+add-meta('description', description)
+
+		include layouts/head
+		-
+			set_bemto_settings({
+				prefix: '',
+				element: '__',
+				modifier: '_'
+			})
+	body
+		block nav
+			//- +b.fixed._top
+			+b.vnav._style
+				+e.container.vcontainer
+					+e.row.vrow.flex-y-center
+						+e.logo.vak-12.vak-md-3
+							+b.hamburger(type="button" id="js-vnav__btn")
+								+e.SPAN.lines
+									span
+									span
+									span
+								//+e.SPAN.text Menuw
+							.inline-block
+								img(src="img/logo.png" alt="")
+						//+e.NAV.menu.vak-12.vak-md-6#navigation
+							ul
+								for item in navigation
+									+menu-item('true', item.link, item.name)
+								+menu-item
+									+b.BUTTON.vbtn._navigation(data-action="vmodal" data-open="#form-modal") Button
+						+e.text.vak-12.vak-md-3#js-nav-text
+							+e.text-toggle.js-vnav-toggle
+								span
+								span
+								span
+							+e.text-links.js-vnav-links
+								a.vnav__text-links-inner +38 (093) 961 33 54
+								a.vnav__text-links-inner.vnav__text-links-inner_hidden +38 (093) 961 33 54
+		div.site#page
+			block header
+				include layouts/header
+			div.site-content#content
+				block content
+			block footer
+				include layouts/footer
+		block dev

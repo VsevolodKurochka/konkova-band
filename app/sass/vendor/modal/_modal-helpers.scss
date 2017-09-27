@@ -1,0 +1,4 @@
+$modal-settings: (
+	'name' : 'vmodal'
+);
+$modal-name: #{getComp('name', $modal-settings)};

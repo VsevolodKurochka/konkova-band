@@ -1,0 +1,20 @@
+extends includes/layout
+block variables
+	- var title = "Main page";
+	- var description = "description";
+block content
+
+block dev
+	.vmodal__content#form(data-title='Замовити')
+		+b.FORM.vform._block
+			+e.row
+				+b.INPUT.vform-control(type="text" placeholder="Имя" name="name")
+				+e.SPAN.line
+			+e.row
+				+b.INPUT.vform-control(type="text" placeholder="E-mail" name="email")
+				+e.SPAN.line
+			+e.row
+				+b.INPUT.vform-control(type="text" placeholder="Телефон" name="phone")
+				+e.SPAN.line
+			+e.row._btn
+				+b.BUTTON.vbtn._block._large._brand-1._bounceTop(type="submit") Получить

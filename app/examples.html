@@ -1,0 +1,174 @@
+
+<!-- Big button with background color (brand-1), shadow-->
+<button class="vbtn vbtn_large vbtn_brand-1 vbtn_shadow vbtn_shadow-brand-1">
+</button>
+<!-- Default button with effect line-->
+<button class="vbtn effect effect_line left top">
+</button>
+<!-- List of possible classes
+effect_shutter-vertical-out
+effect_shutter-horizontal-out
+effect_bounce-top
+effect_bounce-bottom
+effect_skew
+
+
+-->
+<!-- Modal Jquery (app/main.js)-->
+<div class="vmodal vmodal_default vmodal_center" id="vmodalForm">
+  <div class="vmodal__box">
+    <button class="vmodal__close" type="button" data-close="vmodal">&times;
+    </button>
+    <p class="vmodal__title">Отправить заявку
+    </p>
+    <div class="vmodal__body">
+      <div class="vform">
+        <div class="vform__row"><input type="text" placeholder="Имя"/><span class="vform__line"></span>
+        </div>
+        <div class="vform__row"><input type="text" placeholder="E-mail"/><span class="vform__line"></span>
+        </div>
+        <div class="vform__row"><input type="text" placeholder="Телефон"/><span class="vform__line"></span>
+        </div>
+        <div class="vform__row vform__row_btn">
+          <button class="vbtn vbtn_main vbtn_bounceTop" type="submit">Получить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Javascript (app/js/main_vanilla.js)-->
+<div class="vmodal__content" id="vmodalText_content">
+  <div class="vmodal__inner">
+    <p>Lorem </p>
+  </div>
+</div>
+<div class="vmodal__content" id="vmodalVideo">
+  <div class="vmodal__video"></div>
+</div>
+<div class="vmodal__content" id="vmodalForm">
+  <form class="vform" action="application.php" method="POST">
+    <div class="vform__row vform__row_line vform__row_status"><input class="vform-control" type="text" placeholder="Имя" data-rule="required noNumbers"/><span class="vform__line"></span>
+    </div>
+    <div class="vform__row vform__row_line vform__row_status"><input class="vform-control" type="email" placeholder="E-mail" data-rule="required email"/><span class="vform__line"></span>
+    </div>
+    <div class="vform__row vform__row_line vform__row_status"><input class="vform-control" type="text" placeholder="Телефон" data-rule="required"/><span class="vform__line"></span>
+    </div>
+    <div class="vform__row text-center">
+      <button class="vbtn vbtn_main" type="submit">Получить!</button>
+    </div>
+  </form>
+</div>
+<!-- EXAMPLE OF COLLAPSE -->
+<div class="cf vcollapse-wrap">
+  <div class="vcollapse-inner">
+    <div class="vcollapse-header">
+      <p>1</p>
+    </div>
+    <div class="vcollapse-body">
+      <p>Lorem</p>
+    </div>
+  </div>
+</div>
+<!-- Example of tabs-->
+<div class="vtabs-wrap">
+  <div class="vtabs-links">
+    <div class="vtabs-list">
+      <li class="active"><a class="vtabs-link" data-func="tab" data-target="#vtab1">Tab_link_1</a></li>
+      <li><a class="vtabs-link" data-func="tab" data-target="#vtab2">Tab_link_2</a></li>
+    </div>
+    <div class="vtabs-content">
+      <div class="vtabs-content-inner" id="vtab1">
+        <p>1</p>
+      </div>
+      <div class="vtabs-content-inner" id="vtab2">
+        <p>2</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Buttons-->
+<!-- data-content="#example" - content's ID which will be inside modal-->
+<!-- data-id="example" - ID for future modal-->
+<!-- data-title="example" - title inside modal-->
+<!-- If use vanillaJS-->
+<button class="vbtn vbtn_main" data-func="vmodal" data-content="#vmodalText_content" data-id="ModalID" data-title="test">Button
+</button>
+<button class="vbtn vbtn_main" data-func="vmodal" data-content="#vmodalVideo" data-id="ModalID" data-title="Test" data-class="vmodal_big vmodal_transparent" data-video="https://www.youtube.com/embed/5CLFwCUyWqY">Test
+</button>
+<!-- If use jQuery-->
+<button class="vbtn vbtn_main" data-func="vmodal" data-target="#vmodalForm">Button
+</button>
+<button class="vbtn vbtn_main" data-func="vmodal" data-target="#vmodalForm" data-video="https://www.youtube.com/embed/Iutk7AboLZI" data-source="youtube" data-title="Уроки JavaScript Практика #3 Пишем свой CSS генератор">Button_text_big
+</button>
+<!-- Preloaders-->
+<div class="loader">
+  <div class="loader__inner"><span class="loader__bar" id="loader_bar"></span>
+    <div class="loader__center">
+      <div class="loader__spin loader__spin_simple" id="loader_animation">
+      </div><span class="loader__text" id="loader_percent">0%</span>
+    </div>
+  </div>
+  <div class="loader__section loader__section_left">
+  </div>
+  <div class="loader__section loader__section_right">
+  </div>
+</div>
+<div class="loader">
+  <div class="loader__inner"><span class="loader__bar" id="loader_bar"></span>
+    <div class="loader__center">
+      <div class="loader__spin loader__spin_threeCirclesOpacity" id="loader_animation"><span></span>
+      </div><span class="loader__text" id="loader_percent">0%</span>
+    </div>
+  </div>
+  <div class="loader__section loader__section_left">
+  </div>
+  <div class="loader__section loader__section_right">
+  </div>
+</div>
+<div class="loader">
+  <div class="loader__inner">
+    <div class="loader__cube-wrap"><span class="loader__cube"></span><span class="loader__cube"></span><span class="loader__cube"></span><span class="loader__cube"></span><span class="loader__cube"></span><span class="loader__cube"></span><span class="loader__cube"></span><span class="loader__cube"></span><span class="loader__cube"></span>
+    </div>
+  </div>
+  <div class="loader__section loader__section_left">
+  </div>
+  <div class="loader__section loader__section_right">
+  </div>
+</div>
+<div class="loader">
+  <div class="loader__inner">
+    <div class="loader__circles loader__circles_1">
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><span class="loader__spin-text">Loading...</span>
+  </div>
+  <div class="loader__section loader__section_left">
+  </div>
+  <div class="loader__section loader__section_right">
+  </div>
+</div>
+<!-- CONTROLS-->
+<div class="control-group">
+  <label class="control control_default" for="check1">
+    <input type="radio" id="check1" name="checks"/>
+    <div class="control__indicator"></div>
+    <p class="control__text">Check 1</p>
+  </label>
+</div>
+<div class="control-group">
+  <label class="control control_default" for="check2">
+    <input type="checkbox" id="check2" name="checks"/>
+    <div class="control__indicator"></div>
+    <p class="control__text">Check 2</p>
+  </label>
+</div>

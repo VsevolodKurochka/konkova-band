@@ -1,0 +1,40 @@
+.inline-block{
+  display: inline-block;
+}
+.size{
+  &-zero{
+    font-size: 0;
+  }
+}
+.ovh{
+  overflow: hidden;
+}
+@for $i from 1 through 3{
+  .index-#{$i}{
+    z-index: $i;
+  }
+}
+.color{
+  &-brand{
+    &-1{
+      color: setColor('brand-1');
+    }
+    &-2{
+      color: setColor('brand-2');
+    }
+  }
+  &-black{
+    color: setColor('dark', 'black');
+  }
+}
+
+.bg{
+  &-brand{
+    &-1{
+      background-color: setColor('brand-1');
+    }
+    &-2{
+      background-color: setColor('brand-2');
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.negative-margin,
+.vrow{
+  @include xOffset('margin', - getComp(gutter));
+}
+.cf{
+  position: relative;
+  @include cf();
+}
+@if getComp(flex) == true{
+  .#{getComp(columnName)}{
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding-left: getComp(gutter);
+    padding-right: getComp(gutter);
+  }
+  .flex{
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &-y-center{
+      align-items: center;
+    }
+  }
+  .vrow{
+    @extend .flex;
+  }
+}

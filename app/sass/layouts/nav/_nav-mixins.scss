@@ -1,0 +1,61 @@
+@mixin link-effect-scale($color: setColor('brand-1')){
+  &:after{
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color;
+    transform: scaleX(0);
+  }
+  &:hover{
+    &:after{
+      transform: none;
+    }
+  }
+}
+
+@mixin link-effect-double-line($color: setColor('brand-1')){
+  &:before,
+  &:after{
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color;
+    opacity: 0;
+  }
+  &:before{
+    top: 0;
+    transform: translateY(-10px);
+  }
+  &:after{
+    bottom: 0;
+    transform: translateY(10px);
+  }
+  &:hover{
+    color: $color;
+    &:after,
+    &:before{
+      transform: none;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin link-effect-line-top($color: setColor('brand-1')){
+  &:after{
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color;
+    opacity: 0;
+    top: 100%;
+    transform: scale(0.85);
+  }
+  &:hover{
+    &:after{
+      opacity: 1;
+      top: 0;
+      transform: none;
+    }
+  }
+}

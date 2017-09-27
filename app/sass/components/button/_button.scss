@@ -1,0 +1,61 @@
+%button-placeholder{
+  display: inline-block;
+  position: relative;
+  @include button-size($btn-default-padding, $btn-default-size);
+  border: getComp('border', $button-map);
+  border-radius: getComp('radius', $button-map);
+  z-index: z('default');
+  overflow: hidden;
+  max-width: 100%;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: getComp('font-size', $button-map);
+  line-height: getComp('line-height', $button-map);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  transform: translateZ(0);
+  @include transition();
+  @extend .bold !optional;
+}
+.#{getComp('name', $button-map)} {
+  @extend %button-placeholder;
+  &_large{
+    @include button-size($btn-large-padding, $btn-large-size);
+  }
+  &_block{
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  &_shadow{
+    &-brand-1{
+      box-shadow: 0 3px 8px 1px transparentize(setColor('brand-1'), 0.5);
+    }
+    &:hover{
+      box-shadow: none;
+    }
+  }
+  &_navigation{
+    background-color: setColor('menu', 'light');
+    @include resp-max(md){
+      padding: 15px;
+      width: 100%;
+      font-size: 18px;
+      text-align: left;
+    }
+    @include resp-min(md){
+      background-color: setColor('brand-1');
+    }
+  }
+
+  //-
+  //- Iteration button fluid color
+  //-
+
+  @include button-static-iteration();
+
+  //-
+  //- Iteration button border-color
+  //-
+  @include button-border-iteration();
+}

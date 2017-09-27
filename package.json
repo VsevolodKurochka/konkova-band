@@ -1,0 +1,37 @@
+{
+  "name": "basic_version",
+  "version": "1.0.0",
+  "description": "It's default template",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-install": "^0.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.4",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-install": "^0.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VsevolodKurochka/basic_version.git"
+  },
+  "author": "Vsevolod Kurochka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VsevolodKurochka/basic_version/issues"
+  },
+  "homepage": "https://github.com/VsevolodKurochka/basic_version#readme"
+}

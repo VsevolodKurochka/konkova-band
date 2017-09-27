@@ -1,0 +1,6 @@
+$nav-item-name: '';
+@if($wordpress){
+	$nav-item-name: 'menu-item';
+}@else{
+	$nav-item-name: 'vnav__menu-item';
+}

@@ -1,0 +1,94 @@
+$button-map: (
+  'name'        : 'vbtn',
+  'z-index'     : z('default'),
+  'radius'      : 0,
+  'border'      : 0 ,
+  'line-height' : 1.3
+);
+
+//-
+//- Buttons variant
+//-
+
+// 1 key - background
+// 2 key - text color
+$button-static: (
+	'white'				: ( setColor('white'), setColor('brand-1') ),
+	'green'				: ( setColor('green'), setColor('white') ),
+	'brand-1'			: ( setColor('brand-1'), setColor('white') )
+);
+
+// 1 key - border-color
+// 2 key - text color
+$button-border: (
+	'brand-1'			: ( setColor('brand-1'), setColor('dark', 'black') ),
+  'brand-2'     : ( setColor('brand-1'), setColor('dark', 'black') )
+);
+
+// Button default
+$btn-default-padding: 10px 16px;
+$btn-default-size: 14px;
+
+// Button large
+$btn-large-padding: 15px 25px;
+$btn-large-size: 18px;
+
+// Button border
+$btn-border-width: 3px;
+$btn-border-style: solid;
+
+@mixin button-size($button-padding, $button-font-size){
+	padding: $button-padding;
+	font-size: $button-font-size;
+}
+
+@mixin button-static($button-background, $button-color){
+	background-color: $button-background;
+	color: $button-color;
+	&:before{
+		background-color: darken($button-background, 5%);
+	}
+}
+
+@mixin button-border($button-border-color, $button-color){
+	border-color: $button-border-color;
+	color: $button-color;
+	&:before{
+		background-color: $button-border-color;
+	}
+}
+
+//-
+//- Mixin for iteration button
+//-
+@mixin button-static-iteration(){
+ 	@each $name, $values in $button-static{
+    $button-bg: nth($values, 1);
+    $button-color: nth($values, 2);
+    &_#{$name}{
+      @include button-static($button-bg, $button-color);
+      &-simple{
+        &:hover{
+          background-color: darken($button-bg, 15%);
+        }
+      }
+    }
+  }
+}
+
+@mixin button-border-iteration(){
+  @at-root{
+    %vbtn-border{
+      border-width: $btn-border-width;
+      border-style: $btn-border-style;
+    }
+  }
+  @each $name, $values in $button-border{
+    $button-border-color: nth($values, 1);
+    $button-color: nth($values, 2);
+    &_border-#{$name}{
+      @extend %vbtn-border;
+      @include button-border($button-border-color, $button-color);
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// Colors
+	
+	// Brand colors
+
+		$color-brand-1: #F89406;
+		
+		$color-brand-2: #f00;
+
+	$color-responsive-menu: #3949ab;
+
+	$color-modal-main: #F89406;
+
+	$color-success: #5cb85c;
+
+	$color-danger: #d9534f;
+
+// Dependencies
+
+	// Design form ( 'old' or 'new' )
+	
+		$design-form: 'old';
+
+	// Wordpress
+
+		$wordpress: false;
+
+// Errors
+
+	// If not exists variable.
+		$error-variable: "This variable we do not have, sorry. Please try to change variable ";
+		$error-color: 'Invalid color name.';

@@ -1,0 +1,132 @@
+.vform{
+	width: 100%;
+	@at-root{
+		@keyframes formShake {
+		  10%, 90% {
+		    transform: translate3d(-1px, 0, 0);
+		  }
+		  
+		  20%, 80% {
+		    transform: translate3d(2px, 0, 0);
+		  }
+
+		  30%, 50%, 70% {
+		    transform: translate3d(-4px, 0, 0);
+		  }
+
+		  40%, 60% {
+		    transform: translate3d(4px, 0, 0);
+		  }
+		}
+	}
+	&__row{
+		position: relative;
+		margin-top: 15px;
+		&:first-child{
+			margin-top: 0;
+		}
+		&_status{
+			&:after{
+    		content: "";
+    		position: absolute;
+    		top: 50%;
+    		right: 20px;
+    		transform: translate(0, -50%);
+    		width: 15px;
+    		height: 15px;
+    		background-position: 0 0;
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		transition: all ease 0.5s;				
+			}
+			&_error{
+				color: $color-danger;
+				&:after{
+					@include bg('../img/error_v2.png');
+				}
+				input{
+					border-color: $color-danger;
+				}
+			}
+			&_success{
+				&:after{
+					@include bg('../img/success_v2.png');
+				}
+				input{
+					border-color: $color-success;
+				}
+			}
+		}
+	}
+	&_error{
+		[type="submit"]{
+		  animation: formShake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+		  transform: translate3d(0, 0, 0);
+		  backface-visibility: hidden;
+		  perspective: 1000px;
+		}
+	}
+	@if( $design-form == 'new' ){
+		&-control{
+			@include input-default();
+			border: none;
+		}
+		@at-root{
+			.vmodal &{
+				[type="submit"]{
+					border: 3px solid $color-modal-main;
+					border-radius: 0;
+					background-color: transparent;
+					font-size: 20px;
+					color: $color-modal-main;
+					text-transform: uppercase;
+					outline: none;
+					&:hover,
+					&:focus{
+						border-color: $color-modal-main;
+						color: $color-modal-main;
+					}
+				}
+			}
+		}
+		&__line{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 1px;
+			width: 0;
+			background-color: $color-modal-main;
+			@include transition();
+		}
+		input:focus + &__line{
+			width: 100%;
+		}
+		&__row_line{
+			&:before{
+				@include pseudo();
+				left: 0;
+				bottom: 0;
+				height: 1px;
+				width: 100%;
+				background-color: $color-modal-main;
+			}
+		}
+		@include resp-min(xs){
+			&__row{
+				margin-top: 30px;
+			}
+		}	
+	}@else{
+		&-control{
+			@include input-default();
+			border: 1px solid #ddd;
+			&:focus{
+				border-color: setColor('brand-1');
+			}
+		}
+	} 
+
+}
+[type="submit"]{
+	cursor: pointer;
+}

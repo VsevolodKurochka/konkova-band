@@ -1,0 +1,11 @@
+include ../helpers/mixins
+meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+meta(charset="UTF-8")
+link(rel="icon" type="image/png" href=favicon)
+<!--[if lte IE 9]>
+	script(src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
+<![endif]-->
++connect-link("css/style.css")
++connect-link("https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&amp;subset=cyrillic")
+//+connect-script("js/lib/scripts.min.js")
++connect-script("js/vanilla-es6.js")

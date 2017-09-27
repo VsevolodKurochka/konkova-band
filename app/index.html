@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+        <title>Main page</title>
+        <meta property="og:title" content="Main page">
+        <meta property="description" content="description">
+        <meta property="og:description" content="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png"><!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&amp;amp;subset=cyrillic" rel="stylesheet">
+    <!--+connect-script("js/lib/scripts.min.js")-->
+        <script src="js/vanilla-es6.js"></script>
+  </head>
+  <body>
+                <div class="vnav vnav_style">
+                                  <div class="vnav__container vcontainer">
+                                                    <div class="vnav__row vrow flex-y-center">
+                                                                      <div class="vnav__logo vak-12 vak-md-3">
+                                                                                    <button class="hamburger" type="button" id="js-vnav__btn"><span class="hamburger__lines"><span></span><span></span><span></span></span>
+                                                                                      <!--+e.SPAN.text Menuw-->
+                                                                                    </button>
+                                                                        <div class="inline-block"><img src="img/logo.png" alt=""></div>
+                                                                      </div>
+                                                      <!--+e.NAV.menu.vak-12.vak-md-6#navigation
+                                                      ul
+                                                      	for item in navigation
+                                                      		+menu-item('true', item.link, item.name)
+                                                      	+menu-item
+                                                      		+b.BUTTON.vbtn._navigation(data-action="vmodal" data-open="#form-modal") Button
+                                                      -->
+                                                                      <div class="vnav__text vak-12 vak-md-3" id="js-nav-text">
+                                                                                        <div class="vnav__text-toggle js-vnav-toggle"><span></span><span></span><span></span>
+                                                                                        </div>
+                                                                                        <div class="vnav__text-links js-vnav-links"><a class="vnav__text-links-inner">+38 (093) 961 33 54</a><a class="vnav__text-links-inner vnav__text-links-inner_hidden">+38 (093) 961 33 54</a>
+                                                                                        </div>
+                                                                      </div>
+                                                    </div>
+                                  </div>
+                </div>
+    <div class="site" id="page">
+                        <header class="site-header">
+                          <div class="vcontainer">
+                            <h1 class="vtitle-big underline">VIVO MUSIC BAND</h1>
+                            <h2 class="vtitle-small">Гурт Вашого свята</h2>
+                          </div>
+                        </header>
+      <div class="site-content" id="content">
+      </div>
+      <footer class="site-footer" id="colophon">
+        <div class="vcontainer"></div>
+      </footer>
+    </div>
+    <div class="vmodal__content" id="form" data-title="Замовити">
+                        <form class="vform vform_block">
+                                                  <div class="vform__row"><input class="vform-control" type="text" placeholder="Имя" name="name"/><span class="vform__line"></span>
+                                                  </div>
+                                                  <div class="vform__row"><input class="vform-control" type="text" placeholder="E-mail" name="email"/><span class="vform__line"></span>
+                                                  </div>
+                                                  <div class="vform__row"><input class="vform-control" type="text" placeholder="Телефон" name="phone"/><span class="vform__line"></span>
+                                                  </div>
+                                                  <div class="vform__row vform__row_btn">
+                                                                      <button class="vbtn vbtn_block vbtn_large vbtn_brand-1 vbtn_bounceTop" type="submit">Получить
+                                                                      </button>
+                                                  </div>
+                        </form>
+    </div>
+  </body>
+</html>

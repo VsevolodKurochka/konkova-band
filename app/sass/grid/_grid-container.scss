@@ -1,0 +1,11 @@
+.vcontainer{
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 1px;
+	@include xOffset('padding', getComp(gutter));
+  @each $container_resp, $container_value in $containers{
+    @include resp-min($container_resp){
+      width: getComp($container_resp, $containers);
+    }
+  }  
+}

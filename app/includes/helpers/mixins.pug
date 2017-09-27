@@ -1,0 +1,24 @@
+mixin connect-link(src)
+	link(href=src rel="stylesheet")
+mixin connect-script(src)
+	script(src=src)
+mixin add-meta(name, value)
+	if name === 'title'
+		title=value
+		meta(property="og:title" content=value)
+	else if name === 'description'
+		meta(property="description" content=value)
+		meta(property="og:description" content=value)
+mixin menu-item(isLink,href, name)
+
+	- var menuItemClass = '';
+	if wordpress
+		- menuItemClass = 'menu-item';
+	else
+		- menuItemClass = 'vnav__menu-item'; 
+
+	li(class=menuItemClass)
+		if isLink === 'true'
+			a( href=href )=name
+		else
+			block
