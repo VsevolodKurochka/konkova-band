@@ -69,7 +69,6 @@ var Modal = function Modal() {
 	this.options = extendDefaults(defaults, arguments[0]);
 
 	this.element = document.getElementById(this.options.id);
-	log(this.element);
 };
 Modal.prototype.create = function () {
 	ModalWrap.call(this);
@@ -228,27 +227,9 @@ class Modal{
 		}
 
 		// Modal Window initialization
-		var modalContent = d.getElementsByClassName('vmodal__content');
-		var modalContentL = modalContent.length;
 
 		var modalBtn = d.querySelectorAll('[data-action="vmodal"]');
 		var modalBtnL = modalBtn.length;
-
-		for (var _i2 = 0; _i2 < modalContentL; _i2++) {
-			var currentModal = modalContent[_i2];
-			currentModal = new Modal({
-				id: currentModal.getAttribute('id'),
-				title: currentModal.dataset.title
-			}).create();
-		}
-		// new Modal({
-		// 	id: 'form',
-		// 	title: 'form'
-		// }).create();
-		// new Modal({
-		// 	id: 'crew',
-		// 	title: 'Test'
-		// }).create();
 
 		var modal = d.querySelectorAll('.vmodal');
 		var modalL = modal.length;
@@ -283,9 +264,9 @@ class Modal{
 		}
 		function bodyClick(e) {
 			var target = getEventTarget(e);
-			for (var _i3 = 0; _i3 < modalL; _i3++) {
-				if (target == modal[_i3]) {
-					modalClose(modal[_i3]);
+			for (var _i2 = 0; _i2 < modalL; _i2++) {
+				if (target == modal[_i2]) {
+					modalClose(modal[_i2]);
 				}
 			}
 		}
@@ -323,8 +304,8 @@ class Modal{
 			});
 		}
 
-		for (var _i4 = 0; _i4 < modalBtnCloseL; _i4++) {
-			modalBtnClose[_i4].addEventListener('click', function () {
+		for (var _i3 = 0; _i3 < modalBtnCloseL; _i3++) {
+			modalBtnClose[_i3].addEventListener('click', function () {
 				modalClose(this.closest('.vmodal'));
 			});
 		}
@@ -335,5 +316,29 @@ class Modal{
 		document.body.addEventListener("touchstart", function (e) {
 			bodyClick(e);
 		}, false);
+
+		// Adding class on scroll
+		var navigationWrap = document.getElementById('navigation-wrapper');
+		var y = window.pageYOffset;
+
+		var video = document.getElementById('video');
+		var videoText = document.getElementById('video-text');
+
+		function changeView() {
+			y = window.pageYOffset;
+			if (y > 0) {
+				addClass(navigationWrap, 'vnav_scrolling');
+			} else {
+				removeClass(navigationWrap, 'vnav_scrolling');
+			}
+		}
+		changeView();
+		window.addEventListener('scroll', function () {
+			changeView();
+
+			var videoY = window.pageYOffset;
+			video.style.transform = "translate3d(0," + videoY * 0.5 + 'px, 0';
+			videoText.style.transform = "translate3d(0," + -(videoY * 0.1) + 'px, 0';
+		});
 	});
 })();

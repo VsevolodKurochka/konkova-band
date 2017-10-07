@@ -26,3 +26,7 @@
 		@error 'No layer with name '#{$layer}' in $z-indexes. The layer must be one of the '#{map-keys($z-indexes)}' .';
 	}
 }
+
+@function cityPlace($value, $mapWidth){
+	@return ($value * 100) / $mapWidth + %;
+}

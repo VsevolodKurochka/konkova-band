@@ -3,18 +3,249 @@ block variables
 	- var title = "Main page";
 	- var description = "description";
 block content
-
+	+b.SECTION.team
+		+e.name
+			+e.SPAN.name-letter V
+			+e.SPAN.name-letter I
+			+e.SPAN.name-letter V
+			+e.SPAN.name-letter O
+		.vcontainer
+			+e.row.vrow
+				.vak-12.vak-sm-7.vak-md-7
+					+e.header
+						+e.P.title VIVO MUSIC BAND
+						.text-center
+							+e.image(src="img/team.png")
+				.vak-12.vak-sm-5.vak-md-5
+					+e.greeting <span class="team__greeting-accent">ДАВАЙ</span><br>ЗНАЙОМИТИСЯ
+					+e.text
+						p <span class="bold">Vivo Music Band</span> – професійний кавер гурт. В нашому репертуарі більше сотні відомих композицій,  вітчизняних і зарубіжних хітів.
+						p Барабанна перебивка, соло гітари, саксофон, фортепіано, додасть святу шарму і драйву.
+						p.bold Кожна пісня  звучатиме наживо!
+					+e.items.offset-static-sm
+						+e.item
+							+e.item-image
+								img(src="img/baraban.png")
+							+e.P.item-title Барабан
+						+e.item
+							+e.item-image
+								img(src="img/guitar.png")
+							+e.P.item-title Гітара
+						+e.item
+							+e.item-image
+								img(src="img/buttons.png")
+							+e.P.item-title Клавіші
+						+e.item
+							+e.item-image
+								img(src="img/saxofon.png")
+							+e.P.item-title Саксофон
+						+e.item
+							+e.item-image
+								img(src="img/bass-guitar.png")
+							+e.P.item-title Бас-гітара
+					.text-center
+						+b.BUTTON.vbtn._large._brand-1.effect._bounce-top(data-action="vmodal" data-open="#form-modal") Замовити
+	+b.SECTION.geography.vsection
+		.vcontainer
+			.offset-static-sm.text-center
+				h3.vtitle.underline Географія
+				p.vtitle-text.light Найчастіше ми працюємо у цих областях
+			+b.map
+				+e.image
+					img(src="img/map.svg")
+				+e.point._luck
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Луцьк
+				+e.point._rivne
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Рівне
+				+e.point._kyiv
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Київ
+				+e.point._vinnica
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Вінниця
+				+e.point._hmel
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Хмельницький
+				+e.point._ternopil
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Тернопіль
+				+e.point._ivano
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Івано-Франківськ
+				+e.point._ujgorod
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Ужгород
+				+e.point._lvov
+					+e.point-pin
+					+e.point-pulse
+					+e.point-text Львів
+	+b.SECTION.gallery.vsection
+		.vcontainer
+			h3.vtitle.text-center.underline ГАЛЕРЕЯ
+			//#instafeed
+	+b.SECTION.instagram.vsection
+		.vcontainer
+			+e.row.vrow
+				+e.phone.vak-12.vak-md-4.vak-lg-3
+					+b.iphone
+						+e.image(src="img/iphone-instagram.jpg")
+				+e.greeting.vak-12.vak-md-3.vak-lg-4
+					+e.P.title
+						|Підписуйся та отримуй 
+						+e.SPAN.title-inner 10% знижки 
+						|на наші послуги
+				+e.content.vak-12.vak-md-5.vak-lg-5
+					+e.P.title
+						|Більше фото та відео на нашій сторінці в 
+						+e.SPAN.title-inner INSTAGRAM 
+						|або вишлемо на електронну пошту
+					+e.FORM.form.vform__._line._white
+						+e.content
+							+e.row._line
+								+b.INPUT.vform-control(type="text" placeholder="Ваш E-mail*" name="email" required)
+								+e.SPAN.line
+							+e.row._btn
+								+e.BUTTON.btn.vbtn._block._border-white.effect._bounce-top(type="submit") Отримати
+	+b.SECTION.repertoire.vsection
+		.vcontainer
+			.offset-static-sm
+				h3.vtitle.text-center.underline НАШ РЕПЕРТУАР
+			.padding-default.offset-static-sm.text-center
+				p.vtitle-text.light Неможливо стати професіоналами без щоденних тренувань і роботи над собою. Тому репертуар кавер групи VIVO MUSIC BAND постійно змінюється, розширюється і поповнюється новими популярними треками. Ми з радістю підготуємо пару пісень або весь репертуар для вас або ваших гостей на замовлення, обговоривши всі деталі заздалегідь.
+			.vrow.min-sm-x-between.offset-static-md
+				+e.column.vak-12.vak-sm-6.vak-md-4
+					+e.UL.list
+						li urythmics- Sweet dreams
+						li Rag'n'bone man - Human
+						li Sigala - Give Me Your Love
+						li Boney M.–Sunny
+						li БумБокс–Люди
+						li Tina Turner – The Best
+						li Іван Наві –&nbsp; Такі молодi
+						li Zucchero&nbsp; Baila Morena
+						li Bruno Mars Uptown funk
+						li Gnars Barkley Crazy
+						li Брати Гадюкіни Файне Місто Тернопіль
+						li Тіна Кароль Віра Надія Любов
+						li The Avener &amp; Kadebostany - Castle in the snow
+						li John Newman - Love me again
+						li Гайтана-Біль мене не лякає
+						li Дзідзьо - Я і Сара
+						li Safura-Drip Drop
+						li DNCA - Cake by the ocean
+						li ОЕ-На Небі
+						li Coldplay - Sky full of stars
+						li Христина Соловій- Хто як не ти
+						li Rihanna - We found love
+						li Alvaro Soler - El mismo sol
+				+e.column.vak-12.vak-sm-6.vak-md-4
+					+e.UL.list
+						li Океан Ельзи - Не питай
+						li Sia - Cheap Thrills
+						li Дзідзьо - Павук
+						li Роман Скорпіон - Мамо я закохався
+						li Ellie Goulding - Love me like you do
+						li Carla's Dreams - Sub Pielea Ma
+						li Maroon 5-Misery
+						li Владислав Левицкий - Ірка
+						li Pianoboy - Кохання
+						li ТІК - Білі троянди
+						li Дзідзьо - Василина
+						li Selfy - Вишиваночка
+						li Червона рута
+						li Віктор Павлік - Нема з ким
+						li Beyonce's - Crazy in love
+						li Mad Heads XL - Розслабся не парся
+						li Наталка Карпа - Сонцезалежна
+						li Монатик - Выходной
+						li Dzidzio - Сама сама
+						li Offenbach - Be mine
+						li Ed Sheeran - Shape of you
+						li Монатик-Кружит
+			.text-center.disabled
+				+b.A.vbtn._large._brand-1._bounceTop(href="#" disabled) Переглянути більше
+				p.light.size-small (скачати брошуру з нашим репертуаром)
 block dev
-	.vmodal__content#form(data-title='Замовити')
+	+connect-script('js/lib/instafeed.min.js')
+	.vmodal__content#question
 		+b.FORM.vform._block
-			+e.row
-				+b.INPUT.vform-control(type="text" placeholder="Имя" name="name")
-				+e.SPAN.line
-			+e.row
-				+b.INPUT.vform-control(type="text" placeholder="E-mail" name="email")
-				+e.SPAN.line
-			+e.row
-				+b.INPUT.vform-control(type="text" placeholder="Телефон" name="phone")
-				+e.SPAN.line
-			+e.row._btn
-				+b.BUTTON.vbtn._block._large._brand-1._bounceTop(type="submit") Получить
+			+e.content
+				+e.row._line
+					+b.INPUT.vform-control(type="text" placeholder="Имя*" name="name")
+					+e.SPAN.line
+				+e.row._line
+					+b.INPUT.vform-control(type="text" placeholder="E-mail*" name="email")
+					+e.SPAN.line
+				+e.row._line
+					+b.INPUT.vform-control(type="tel" placeholder="Телефон*" name="phone")
+					+e.SPAN.line
+				+e.row._line
+					+b.TEXTAREA.vform-control(type="text" placeholder="Запитання*" name="message" rows="5")
+				+e.row._btn._line
+					+b.BUTTON.vbtn._block._large._brand-1.effect._bounce-top(type="submit") Задати запитання
+	.vmodal__content#form
+		+b.FORM.vform._block
+			+e.content
+				+e.row._line
+					+b.INPUT.vform-control(type="text" placeholder="Имя*" name="name")
+					+e.SPAN.line
+				+e.row._line
+					+b.INPUT.vform-control(type="text" placeholder="E-mail*" name="email")
+					+e.SPAN.line
+				+e.row._line
+					+b.INPUT.vform-control(type="tel" placeholder="Телефон*" name="phone")
+					+e.SPAN.line
+				+e.row._btn._line
+					+b.BUTTON.vbtn._block._large._brand-1.effect._bounce-top(type="submit") Замовити
+	
+	script.
+		new Modal({
+			id: 'question',
+			title: 'Задати запитання'
+		}).create();
+		new Modal({
+			id: 'form',
+			title: 'Замовити'
+		}).create();
+		document.addEventListener("DOMContentLoaded", function(){
+			//- var feed = new Instafeed({
+			//- 	get: 'tagged',
+			//- 	tagName: 'awesome',
+			//- 	accessToken: '2814285990.f71b6fa.fbc88f853da34947830bc81a22f757d1',
+			//- 	clientId: 'f71b6fac32a548d0940a1f810a2eadaa',
+			//- 	template: '<li><a href="{{link}}" target="_blank"><div class="username">{{model.user.username}}</div><img src="{{image}}" /></a></li>'
+			//- });
+			//- feed.run();
+			//- var feed = new Instafeed({
+			//- 		get: 'tagged',
+			//- 		tagName: "phonecase",
+			//- 		accessToken: '1507080146.821dc3b.d68cdba7da4c4d9fb3b4f450af1b61bc',
+			//- 		sortBy: 'most-recent',
+			//- 		resolution: 'low_resolution',
+			//- 		limit: "500",
+			//- 		userId: '1507080146',
+			//- 		template: '<li><a href="{{link}}" target="_blank"><div class="username">{{model.user.username}}</div><img src="{{image}}" /></a></li>'
+			//- });
+			//- feed.run();
+			var feed = new Instafeed({
+				get: 'tagged',
+				tagName: 'phonecase',
+				accessToken: '2814285990.f71b6fa.fbc88f853da34947830bc81a22f757d1',
+				resolution: 'low_resolution',
+				limit: "40",
+				userId: '2814285990',
+				template: '<li><a href="{{link}}" target="_blank"><div class="username">{{model.user.username}}</div><img src="{{image}}" /></a></li>'
+			});
+			feed.run();
+		});
+		

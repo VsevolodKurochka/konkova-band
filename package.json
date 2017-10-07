@@ -6,7 +6,9 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-install": "^0.6.0"
+    "gulp-install": "^0.6.0",
+    "gulp-open": "^2.0.0",
+    "gulp-rename": "^1.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -16,6 +18,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^7.0.0",
+    "gulp-connect-php": "^1.0.1",
     "gulp-install": "^0.6.0",
     "gulp-notify": "^2.2.0",
     "gulp-pug": "^3.2.0",

@@ -68,7 +68,6 @@ var Modal = function(){
 	this.options = extendDefaults(defaults, arguments[0]);
 	
 	this.element = document.getElementById(this.options.id);
-	log(this.element);
 }
 Modal.prototype.create = function(){
 	ModalWrap.call(this);
@@ -231,28 +230,11 @@ class Modal{
 			}
 
 		// Modal Window initialization
-		const modalContent = d.getElementsByClassName('vmodal__content');
-		const modalContentL = modalContent.length;
 		
 		const modalBtn = d.querySelectorAll('[data-action="vmodal"]');
 		const modalBtnL = modalBtn.length;
 
-
-		for(let i = 0; i < modalContentL; i++){
-			let currentModal = modalContent[i];
-			currentModal = new Modal({
-				id: currentModal.getAttribute('id'),
-				title: currentModal.dataset.title
-			}).create();
-		}
-		// new Modal({
-		// 	id: 'form',
-		// 	title: 'form'
-		// }).create();
-		// new Modal({
-		// 	id: 'crew',
-		// 	title: 'Test'
-		// }).create();
+		
 
 		const modal = d.querySelectorAll('.vmodal');
 		const modalL = modal.length;
@@ -340,5 +322,30 @@ class Modal{
 		document.body.addEventListener("touchstart", function(e) {
 			bodyClick(e);
 		}, false);
+
+
+		// Adding class on scroll
+		var navigationWrap = document.getElementById('navigation-wrapper');
+		var y = window.pageYOffset;
+
+		var video = document.getElementById('video');
+		var videoText = document.getElementById('video-text');
+
+		function changeView() {
+			y = window.pageYOffset;
+			if (y > 0) {
+				addClass(navigationWrap, 'vnav_scrolling');
+			} else {
+				removeClass(navigationWrap, 'vnav_scrolling');
+			}
+		}
+		changeView();
+		window.addEventListener('scroll', function () {
+			changeView();
+
+			var videoY = window.pageYOffset;
+			video.style.transform = "translate3d(0," + (videoY * 0.5) + 'px, 0';
+			videoText.style.transform = "translate3d(0," + -(videoY * 0.1) + 'px, 0';
+		});
 	});
 }());

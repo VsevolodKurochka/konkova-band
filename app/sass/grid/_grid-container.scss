@@ -9,3 +9,9 @@
     }
   }  
 }
+.padding-default{
+	@include resp-min(md){
+		padding-left: 75px;
+		padding-right: 75px;
+	}
+}

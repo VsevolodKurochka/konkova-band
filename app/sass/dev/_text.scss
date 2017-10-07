@@ -1,8 +1,7 @@
 %vtitle-default{
-	margin-top: 10px;
-	margin-bottom: 15px;
+	margin-top: 0;
+	margin-bottom: 0;
 	line-height: 1.2;
-	font-weight: normal;
 }
 .vtitle{
 	text-transform: uppercase;
@@ -17,8 +16,28 @@
 	&-big{
 		font-size: 30px;
 		@include fs('vtitle-big');
-		@extend .bold !optional;
 		@extend %vtitle-default;
+	}
+	&-text{
+		font-size: 20px;
+		@extend %vtitle-default;
+		@include resp-min(md){
+			font-size: 24px;
+		}
+	}
+}
+.underline{
+	position: relative;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	&:before{
+		@include pseudo();
+		left: 50%;
+		bottom: 0;
+		width: 200px;
+		margin-left: -100px;
+		height: 4px;
+		background-color: setColor('brand-1');
 	}
 }
 .text{

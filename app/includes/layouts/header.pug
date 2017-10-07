@@ -1,5 +1,30 @@
 include ../bem/index
-+b.HEADER.site-header
-	.vcontainer
-		h1.vtitle-big.underline VIVO MUSIC BAND
-		h2.vtitle-small Гурт Вашого свята
++b.HEADER.site-header.text-center
+	+b.min-sm-fixed._top
+		+b.vnav._style#navigation-wrapper
+			+e.row.vrow.flex-y-center
+				+e.logo.vak-12.vak-sm-3
+					.inline-block
+						img(src="img/logo.png" alt="")
+				+e.text.vak-12.vak-sm-9#js-nav-text
+					+e.item
+						+b.social
+							+e.A.item(href="https://www.facebook.com/Vivomband/")
+								+e.img(src="img/social-fb.png")
+							+e.A.item(href="https://www.youtube.com/channel/UCWLQWWhQsgWaQmVmc6kR9xg")
+								+e.img(src="img/social-y.png")
+							+e.A.item(href="https://www.instagram.com/vivomusicco/")
+								+e.img(src="img/social-inst.png")
+					+e.item
+						+e.A.text-link(href="tel: +1") +38 (093) <span class="vnav__text-link-span">961 33 54</span>
+						+e.A.text-link(href="tel: +1") +38 (093) <span class="vnav__text-link-span">961 33 54</span>
+					+e.item
+						+b.BUTTON.vbtn._brand-1.effect._bounce-top(data-action="vmodal" data-open="#question-modal") Задати запитання
+	+b.video._parallax#video
+		+e.IFRAME.frame(src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscrean)
+	.vcontainer.video-text#video-text
+		.offset-extra
+			+b.H1.vtitle-big.bold.underline VIVO MUSIC BAND
+			h2.vtitle-small Гурт Вашого свята
+		.text-center
+			+b.BUTTON.vbtn._large._brand-1.effect._bounce-top(data-action="vmodal" data-open="#form-modal") Замовити

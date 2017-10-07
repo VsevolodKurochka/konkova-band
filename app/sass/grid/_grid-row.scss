@@ -25,4 +25,26 @@
   .vrow{
     @extend .flex;
   }
+  .min{
+    &-sm{
+      @include resp-min(sm){
+        &-reverse{
+          flex-direction: row-reverse;
+        }
+        &-x{
+          &-end{
+            justify-content: flex-end;
+          }
+          &-between{
+            justify-content: space-between;
+          }
+        }
+        &-y{
+          &-center{
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
 }

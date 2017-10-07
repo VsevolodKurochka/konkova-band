@@ -1,3 +1,31 @@
-footer.site-footer#colophon
+include ../bem/index
++b.HEADER.site-header.text-center
+	+b.video
+		+e.IFRAME.frame(src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscrean)
 	.vcontainer
-		
+		.offset-big
+			p.vtitle.underline Контакти
+		.offset-big
+			+b.H1.vtitle.bold Є запитання?
+			h2.vtitle-small Введіть Ваш номер телефону і ми Вам зателефонуємо
+		+e.form.text-center.offset-static-md
+			+b.FORM.vform._line._white
+				+e.content
+					+e.row._line
+						+b.INPUT.vform-control(type="text" placeholder="Номер телефону*" name="phone" required)
+						+e.SPAN.line
+					+e.row._btn
+						+e.BUTTON.btn.vbtn._block._border-white.effect._bounce-top(type="submit") Зателефонуйте мені
+		.text-center.offset-static-sm
+			+e.A.link._phone(href="tel: 050 700 66 38") 050 700 66 38
+			+e.A.link._phone(href="tel: 063 818 80 58") 063 818 80 58
+		.text-center.offset-static-sm
+			+e.A.link._mail(href="mailto: vivomusic2006@gmail.com") vivomusic2006@gmail.com
+		.text-center
+			+b.social
+				+e.A.item(href="https://www.facebook.com/Vivomband/")
+					+e.img._big(src="img/social-fb.png")
+				+e.A.item(href="https://www.youtube.com/channel/UCWLQWWhQsgWaQmVmc6kR9xg")
+					+e.img._big(src="img/social-y.png")
+				+e.A.item(href="https://www.instagram.com/vivomusicco/")
+					+e.img._big(src="img/social-inst.png")

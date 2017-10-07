@@ -35,16 +35,10 @@
       box-shadow: none;
     }
   }
-  &_navigation{
-    background-color: setColor('menu', 'light');
-    @include resp-max(md){
-      padding: 15px;
-      width: 100%;
-      font-size: 18px;
-      text-align: left;
-    }
-    @include resp-min(md){
-      background-color: setColor('brand-1');
+  
+  &_border-white{
+    &:hover{
+      color: #000;
     }
   }
 

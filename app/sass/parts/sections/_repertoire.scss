@@ -1,0 +1,35 @@
+.repertoire{
+	&__list{
+		list-style: none;
+		li{
+			position: relative;
+			display: block;
+			margin-bottom: 15px;
+			font-weight: 100;
+			padding-left: 30px;
+			line-height: 1;
+			&:before{
+				@include pseudo();
+				left: 0;
+				top: 50%;
+				margin-top: -1px;
+				width: 15px;
+				height: 2px;
+				background-color: setColor('brand-1');
+			}
+			&:not(:last-child){
+				
+			}
+			&:nth-child(even){
+				font-weight: bold;
+			}
+		}
+	}
+	// @include resp-max(sm){
+	// 	&__column{
+	// 		&:not(:last-child){
+	// 			margin-bottom: 30px;
+	// 		}
+	// 	}
+	// }
+}

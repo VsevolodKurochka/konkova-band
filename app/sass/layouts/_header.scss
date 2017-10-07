@@ -1,6 +1,47 @@
 .site-header {
 	position: relative;
-	min-height: 50px;
+	padding-top: 15px;
+	padding-bottom: 50px;
 	z-index: z('default');
+	color: #fff;
+	background-color: #000;
+	overflow: hidden;
+	&:before{
+		@include pseudo();
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: transparentize(setColor('dark', 'black'), 0.6);
+		z-index: -1;
+	}
+	&__link{
+		text-decoration: none;
+		color: inherit;
+		font-weight: bold;
+	}
+	@include resp-min(sm){
+		padding-top: 150px;
+		padding-bottom: 75px;
+		&__form{
+			width: 600px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		&__link{
+			font-size: 36px;
+			&_phone{
+				display: inline-block;
+				vertical-align: middle;
+				&:not(:last-child){
+					margin-right: 30px;
+				}
+			}
+		}
+	}
+	@include resp-min(md){
+		padding-top: 250px;
+		padding-bottom: 125px;
+	}
 	//@include bg('');
 }
